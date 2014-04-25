@@ -64,5 +64,5 @@ static class_register cr_##class_name(&(context_name),#class_name,class_name##_n
 
 
 //reflect create
-#define new_reflect_object(reflect_ctx,class_name) ((reflect_ctx)!=NULL?reflect_ctx->new_object(class_name):NULL)
+#define new_reflect_object(reflect_ctx,class_name) ((reflect_ctx)!=NULL?(reflect_ctx)->new_object(class_name):NULL)
 
