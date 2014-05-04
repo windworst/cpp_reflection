@@ -56,11 +56,11 @@ private:
 
 //regist reflect
 #define REFLECT_REGIST(context_name,class_name)	\
-static reflect_object* class_name##_newer()		\
+static reflect_object* context_name##_##class_name##_newer()		\
 {												\
 	return new class_name();					\
 }												\
-static class_register cr_##class_name(&(context_name),#class_name,class_name##_newer);
+static class_register cr_##class_name(&(context_name),#class_name,context_name##_##class_name##_newer);
 
 
 //reflect create
